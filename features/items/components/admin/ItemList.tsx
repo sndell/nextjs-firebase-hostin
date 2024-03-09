@@ -1,15 +1,18 @@
-import { getItems } from '@/features/items/api/server/getItems';
+'use client';
+
 import Image from 'next/image';
 
-export default async function Page() {
-  const items = await getItems();
+type Props = {
+  items: Item[];
+};
 
+export const ItemList = ({ items }: Props) => {
   return (
-    <div className="space-y-2">
+    <div className="w-full space-y-2">
       {items.map((item, index) => (
         <div
           key={index}
-          className="flex items-center justify-between w-full gap-2 p-2 border rounded-lg shadow-lg bg-zinc-200 border-zinc-300"
+          className="flex items-center justify-between p-2 border rounded-lg shadow-lg bg-zinc-200 border-zinc-300"
         >
           <Image
             src={item.photo}
@@ -24,4 +27,4 @@ export default async function Page() {
       ))}
     </div>
   );
-}
+};

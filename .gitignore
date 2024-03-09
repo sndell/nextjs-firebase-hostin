@@ -16,9 +16,15 @@
 # production
 /build
 
+# firebase
+firebase-export
+.firebase
+firebase-debug.log
+
 # misc
 .DS_Store
 *.pem
+.env
 
 # debug
 npm-debug.log*
